@@ -1,0 +1,182 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px 15px;
+  background: #0b1020;
+  color: #f3f6ff;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  max-width: 850px;
+  margin: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h1 span {
+  color: #8b9cff;
+}
+
+header p {
+  color: #9aa8c3;
+}
+
+.painel {
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid #293651;
+  border-radius: 15px;
+  background: #121a2d;
+}
+
+h2 {
+  margin-top: 0;
+  color: #a6b1ff;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #34415f;
+  border-radius: 8px;
+  background: #0b1020;
+  color: white;
+}
+
+.camera-quadro {
+  display: grid;
+  min-height: 250px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #34415f;
+  border-radius: 12px;
+  background: #080d19;
+  text-align: center;
+}
+
+video {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+video[hidden] {
+  display: none;
+}
+
+#camera-vazia {
+  padding: 20px;
+  color: #9aa8c3;
+}
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #8b9cff;
+  color: #11172d;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn-capturar {
+  background: #63e6be;
+}
+
+#btn-desligar {
+  background: #34415f;
+  color: white;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#mensagem {
+  color: #9aa8c3;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#resultado-vazio {
+  padding: 30px;
+  border: 1px dashed #34415f;
+  border-radius: 10px;
+  color: #9aa8c3;
+  text-align: center;
+}
+
+#foto-final {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  padding: 15px;
+  color: #9aa8c3;
+  text-align: center;
+  font-size: 12px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #34415f;
+  border-radius: 8px;
+  background: #0b1020;
+  color: white;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: 2px solid #8b9cff;
+  outline-offset: 2px;
+}
+
+option {
+  background: #121a2d;
+  color: white;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .controles {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

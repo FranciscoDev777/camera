@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera PFE</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main class="app">
+        <header>
+            <h1>Camera <span>PFE</span></h1>
+            <p>Capture momentos. Identifique cada registro.</p>
+        </header>
+
+        <section class="painel">
+            <h2>Identificação da captura</h2>
+            <label for="identificacao">Texto que aparecerá na foto</label>
+            <input id="identificacao" type="text" maxlength="70" placeholder="Ex.: Francisco e Aquiles">
+        </section>
+
+
+        <label for="filtro">Escolha o filtro da foto</label>
+        <select id="filtro">
+            <option value="none">Original</option>
+            <option value="sepia(0.85)">Sépia</option>
+            <option value="grayscale(1)">Preto e branco</option>
+            <option value="hue-rotate(190deg) saturate(1.3)">Frio</option>
+            <option value="sepia(0.4) saturate(1.5) contrast(1.1)">Vintage</option>
+            <option value="contrast(1.7) saturate(1.2)">Alto contraste</option>
+        </select>
+
+
+        <section class="painel">
+            <h2>Pré-visualização da câmera</h2>
+            <p id="status-camera">Câmera desligada</p>
+
+            <div class="camera-quadro">
+                <video id="video" autoplay playsinline muted hidden></video>
+                <div id="camera-vazia">
+                    <h3>Sua câmera está pronta</h3>
+                    <p>Ative a câmera para ver a imagem em tempo real.</p>
+                </div>
+            </div>
+
+            <div class="controles">
+                <button id="btn-camera">Ligar câmera</button>
+                <button id="btn-capturar" disabled>Capturar foto</button>
+                <button id="btn-desligar" disabled>Desligar câmera</button>
+            </div>
+
+            <p id="mensagem" role="status">
+                Clique em Ligar câmera e permita o acesso.
+            </p>
+        </section>
+
+        <section class="painel">
+            <h2>Foto processada</h2>
+            <p>Efeito aplicado: sépia</p>
+
+            <div id="resultado-vazio">
+                Sua foto aparecerá aqui.
+            </div>
+
+            <div id="resultado-conteudo" hidden>
+                <img id="foto-final" alt="Foto processada">
+                <p><strong>Identificação:</strong> <span id="texto-final"></span></p>
+                <p><strong>Data e hora:</strong> <span id="data-final"></span></p>
+                <button id="btn-baixar">Baixar imagem</button>
+            </div>
+        </section>
+
+        <footer>
+            Camera PFE | MediaDevices, Canvas e JavaScript
+        </footer>
+    </main>
+
+    <canvas id="canvas" hidden></canvas>
+</body>
+
+</html>
